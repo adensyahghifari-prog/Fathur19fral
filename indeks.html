@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perjalanan AL - Animasi</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="app">
+    <section class="stage">
+      <header class="heading">
+        <h2>PERJALANAN AL</h2>
+        <p>Sebuah langkah menuju cita-cita</p>
+      </header>
+
+      <div class="character-wrap" id="characterWrap">
+        <img
+          src="./images/karakter-al.png"
+          class="character"
+          id="character"
+          alt="Karakter AL"
+        >
+        <span class="mouth" aria-hidden="true"></span>
+      </div>
+
+      <div class="subtitle-box">
+        <span class="speaker">AL</span>
+        <p id="subtitle">Tekan Mulai untuk mendengarkan ceritaku.</p>
+      </div>
+
+      <footer class="footer">
+        <span id="sceneName">PEMBUKAAN</span>
+        <span id="counter">0 / 6</span>
+      </footer>
+    </section>
+
+    <section class="panel">
+      <h1>Kisah Perjalanan AL</h1>
+      <p class="description">
+        Animasi cerita dengan narasi dan subtitle bahasa Indonesia.
+      </p>
+
+      <div class="buttons">
+        <button id="playBtn" class="primary">▶ Mulai</button>
+        <button id="pauseBtn" disabled>Ⅱ Jeda</button>
+        <button id="stopBtn" disabled>■ Berhenti</button>
+      </div>
+
+      <label for="voiceSelect">Pilih suara</label>
+      <select id="voiceSelect"></select>
+
+      <label for="speed">
+        Kecepatan suara <output id="speedValue">0,9×</output>
+      </label>
+      <input id="speed" type="range"
+        min="0.7" max="1.1" step="0.1" value="0.9">
+
+      <label for="volume">
+        Volume <output id="volumeValue">100%</output>
+      </label>
+      <input id="volume" type="range"
+        min="0" max="1" step="0.1" value="1">
+
+      <p id="status" class="status">Siap memulai cerita.</p>
+
+      <details>
+        <summary>Lihat naskah cerita</summary>
+        <ol id="storyList"></ol>
+      </details>
+
+      <p class="note">
+        Suara menggunakan TTS browser. Ketersediaan suara laki-laki
+        bahasa Indonesia bergantung pada perangkat.
+      </p>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
